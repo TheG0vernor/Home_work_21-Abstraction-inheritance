@@ -24,6 +24,14 @@ def check_input(user_input):
     # завершение небольшой проверки ввода пользователя #
 
 
+def check_input_low(user_input):
+    """Крохотная проверка начального ввода пользователя"""
+    if user_input.lower() == 'хватит':
+        print('Но мы ещё не начали! :) Так что продолжаем')
+    else:
+        print('Погнали!\n')
+
+
 def to_shop(product, amount):
     """Доставка товаров со склада в магазин"""
     shop = Shop()

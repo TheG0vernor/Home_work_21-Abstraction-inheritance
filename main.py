@@ -1,5 +1,5 @@
 from dao.request import Request
-from functions import check_input, print_store, print_shop, to_store, to_shop
+from functions import check_input, print_store, print_shop, to_store, to_shop, check_input_low
 
 print('Привет и добро пожаловать в мою программу доставки!\n')
 user_input = (input(
@@ -7,11 +7,7 @@ user_input = (input(
     'Не забудьте указать количество! И наименование товара. \n'
     'Для начала напишите "начали" или что-нибудь ещё. '
     'Для завершения пришлите "хватит"\n'))
-if user_input.lower() == 'хватит':
-    print('Но мы ещё не начали! :) Так что продолжаем')
-else:
-    print('Погнали!\n')
-
+check_input_low(user_input)
 
 while True:
     print_store()  # отображение товара на складах в наличии
