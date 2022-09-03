@@ -6,13 +6,9 @@ class Request:
         self._product = None  # наименование
         self.string = string  # поступающая строка
         try:  # обработка поступающей строки
-            _range = range(1, 501)
-            list_range = []
-            for i in _range:
-                list_range.append(str(i))
             data = self.string.split(' ')
             for i in data:
-                if i in list_range:
+                if i.isdigit():  # определить число в строке
                     self._amount = (int(i))  # назначить количество
                     self._product = (data[data.index(i) + 1])  # назначить продукцию
                 if i.lower() == 'из' or i.lower() == 'со':
