@@ -14,10 +14,10 @@ while True:
     print_shop()
     user_input = (input('\nЧто вам угодно доставить?\n'))
     check_input(user_input)  # проверка ввода пользователя
-    to = Request(user_input).get_to()
-    from_ = Request(user_input).get_from()  # назначение переменных
-    amount = Request(user_input).get_amount()
-    product = Request(user_input).get_product()
+    to = Request(user_input).to
+    from_ = Request(user_input).from_  # назначение переменных
+    amount = Request(user_input).amount
+    product = Request(user_input).product
     if to == 'склад':
         to_store(product=product, amount=amount)
     else:

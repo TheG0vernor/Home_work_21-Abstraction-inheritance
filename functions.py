@@ -6,19 +6,19 @@ from dao.store import Store
 def check_input(user_input):
     """Небольшая проверка ввода пользователя"""
     # начало небольшой проверки ввода пользователя #
-    if user_input == 'хватит':
+    if user_input.lower() == 'хватит':
         print('спасибо, что воспользовались услугами нашей службы доставки')
         exit()
-    if Request(user_input).get_to() is None:
+    if Request(user_input).to is None:
         print('Непонятен пункт назначения')
         exit()
-    if Request(user_input).get_from() is None:
+    if Request(user_input).from_ is None:
         print('Непонятен пункт отправления')
         exit()
-    if Request(user_input).get_amount() is None:
+    if Request(user_input).amount is None:
         print('Неясно количество товара')
         exit()
-    if Request(user_input).get_product() is None:
+    if Request(user_input).product is None:
         print('Непонятен пункт отправления')
         exit()
     # завершение небольшой проверки ввода пользователя #
